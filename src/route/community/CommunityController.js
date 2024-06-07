@@ -75,7 +75,7 @@ class CommunityController extends CommonController {
             const { id } = req.params;
             const result = await this.service.remove_member(id);
           return {
-            data: result,
+            data: {},
           };
         })
     }

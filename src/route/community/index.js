@@ -14,5 +14,6 @@ router.get('/me/owner', authMiddleware, CommunityController.getMyOwnedCommunitie
 router.get('/me/member', authMiddleware, CommunityController.getMyJoinedCommunities());
 
 router.put('/', authMiddleware, roleMiddleware(['member-add']), CommunityController.addMember())
-router.delete('/:id', authMiddleware, roleMiddleware["member-remove"], CommunityController.removeMember());
+router.delete('/:id', authMiddleware, roleMiddleware(["member-remove"]), CommunityController.removeMember());
+
 module.exports = router;
